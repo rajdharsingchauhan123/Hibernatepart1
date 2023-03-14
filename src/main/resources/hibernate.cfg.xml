@@ -15,7 +15,7 @@
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
         <!-- Drop and  re-create all the database on startup-->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <!-- print executed SQL to stdout -->
         <property name="show_sql">true</property>
         <property name="format_sql">ture</property>

@@ -2,6 +2,7 @@ package com.example.Hibernatepart1;
 
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 
 import javax.persistence.*;
@@ -12,8 +13,9 @@ import java.io.Serializable;
 @Table(name = "employee")
 public class Employee implements Serializable {
     @Id
-    @GeneratedValue(strategy =GenerationType.AUTO)
-    private int id ;
+    @GenericGenerator(name = "emp_id ",strategy = " com.example.Hibernatepart1.CustomIdGen")
+    @GeneratedValue(generator = "emp_id")
+    private Integer id ;
     @Column
     private String name;
     @Column

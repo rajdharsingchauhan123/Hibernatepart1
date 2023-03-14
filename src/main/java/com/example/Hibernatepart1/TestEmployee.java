@@ -8,8 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import java.util.HashSet;
-import java.util.Set;
+
 
 public class TestEmployee {
     private static SessionFactory sessionFactory = null;
@@ -25,7 +24,6 @@ public class TestEmployee {
 
         Configuration configuration = new Configuration();
         configuration.configure("hibernate.cfg.xml");
-
         configuration.addAnnotatedClass(com.example.Hibernatepart1.Employee.class);
 
 
@@ -55,6 +53,11 @@ public class TestEmployee {
             txn = session.beginTransaction();
 
       Employee employee=new Employee("raj",55);
+            Employee employee1=new Employee("raj",55);
+            Employee employee2=new Employee("raj",55);
+            session.save(employee1);
+            session.save(employee2);
+
 
 
 
